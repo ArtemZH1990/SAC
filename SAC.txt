@@ -1,0 +1,22 @@
+Standard American Convention
+На вход программе подаётся натуральное число. Напишите программу, которая вставляет в заданное число запятые в соответствии со стандартным американским соглашением о запятых в больших числах.
+
+# put your python code here
+n = input()
+a = n[::-1]
+SAC = []
+count = 0
+if len(n) <= 3:
+    print(n)
+elif len(n) > 3:
+    for i in a:
+        SAC.append(i)
+        count += 1
+        if count == 3:
+            SAC.append(',')
+            count = 0
+    if SAC[-1] == ',':
+        SAC[-1] = ''
+        print(*SAC[::-1], sep='')
+    else:
+        print(*SAC[::-1], sep='')
